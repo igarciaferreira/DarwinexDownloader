@@ -14,10 +14,16 @@ import os
 
 # main class
 class DarwinexDownloader:
-
+	''' Class to download data from Darwinex'''
 
 	# Initialization
 	def __init__(self, user, password):
+		''' Params
+        :user: ftp username
+        :password: ftp password
+        :return: class
+        :rtype: DarwinexDownloader
+        '''
 		self.user = user
 		self.passw = password
 		
@@ -25,6 +31,13 @@ class DarwinexDownloader:
 		self.ftp = ftplib.FTP('tickdata.darwinex.com', self.user, self.passw)
 
 	def download(self, ticker, date_start, date_end, frecuency):
+		''' Params
+        :ticker: Ticker's name to download
+        :date_start: start date with format dd-mm-yyyy
+		:date_end: End date with format dd-mm-yyyy
+        :return: ohlc data
+        :rtype: dataframe
+        '''
 		# Create a temp folder
 		tmpdirname = 'tempDataFolder'
 		with tempfile.TemporaryDirectory() as tmpdirname:
