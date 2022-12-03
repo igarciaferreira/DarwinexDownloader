@@ -1,3 +1,6 @@
+# Quitar el gitignore
+.gitignore
+
 # Ignora la carpeta egg
 DarwinexDownloader.egg-info
 
