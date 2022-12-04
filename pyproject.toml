@@ -1,0 +1,21 @@
+[project]
+name = "DarwinexDownloader"
+version = "0.0.4"
+authors = [
+  { name="Iván García-Ferreira", email="ivan@garcia-ferreira.es" },
+]
+description = "Package to download historic data from Darwinex"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+	"License :: OSI Approved :: MIT License",
+	"Operating System :: OS Independent",
+	"Topic :: Office/Business :: Financial",
+	"Topic :: Office/Business :: Financial :: Investment",
+	"Development Status :: 3 - Alpha"
+]
+
+[project.urls]
+"Homepage" = "https://github.com/igarciaferreira/DarwinexDownloader"
+"Bug Tracker" = "https://github.com/igarciaferreira/DarwinexDownloader/issues"
