@@ -1,6 +1,6 @@
 [project]
 name = "darwinexDownloader"
-version = "0.0.15"
+version = "0.0.16"
 authors = [
   { name="Iván García-Ferreira", email="ivan@garcia-ferreira.es" },
 ]
