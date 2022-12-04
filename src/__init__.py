@@ -1,1 +1,1 @@
-from src.dwnx  import downloader
+from src.dwnx  import Connection

@@ -1,6 +1,6 @@
 [project]
 name = "darwinexDownloader"
-version = "0.0.14"
+version = "0.0.15"
 authors = [
   { name="Iván García-Ferreira", email="ivan@garcia-ferreira.es" },
 ]
@@ -19,3 +19,5 @@ classifiers = [
 [project.urls]
 "Homepage" = "https://github.com/igarciaferreira/DarwinexDownloader"
 "Bug Tracker" = "https://github.com/igarciaferreira/DarwinexDownloader/issues"
+"Repository" = "https://github.com/igarciaferreira/DarwinexDownloader"
+"Changelog" = "https://github.com/igarciaferreira/DarwinexDownloader/releases"
