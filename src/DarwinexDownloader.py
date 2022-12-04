@@ -8,7 +8,7 @@ import gzip
 import pandas as pd
 # Library to manage time
 from datetime import date, timedelta
-# Library to os manage
+# Library to os manage files in OS
 import os
 
 

@@ -19,7 +19,12 @@ Darwinex data download is performed via FTP, in each file that you can downloade
 The following are required before installing cooltools:
 
 * Python 3.7+
-* `numpy`
+* ftplib
+* tempfile
+* gzip
+* pandas
+* datetime
+* os
 
 ## Installation
 
@@ -64,9 +69,13 @@ Now in the 'data' variable we have the ohlc data ready to make our analysis.
  2022-06-29 23:30:00 | 1.05218 | 1.05238 | 1.05204 | 1.05237 | 244950000.0 |
  2022-06-29 23:45:00 | 1.05236 | 1.05238 | 1.05217 | 1.05220 | 291050000.0 |
 
-For the moment, date format must always be as follows: "dd-mm-yyyy" where the first date is the start date and the second is the end date.
+In the download method we have 4 arguments.
 
-The frecuency has the format used by [pandas timeframes](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases) where the most used in trading can be:
+The first one is the ticker. The valid tickers are show in the [Darwinex website](https://www.darwinex.com/es/spreads/forex)
+
+The second and third arguments are dates. For the moment, date format must always be as follows: "dd-mm-yyyy" where the first date is the start date and the second is the end date.
+
+And the 4th argument is the frecuency. This frecuency has the format used by [pandas timeframes](https://pandas.pydata.org/pandas-docs/stable/user_guide/timeseries.html#offset-aliases) where the most used in trading can be:
 * '1Min' 
 * '5Min'
 * '15Min'
