@@ -28,15 +28,7 @@ The following are required before installing cooltools:
 
 ## Installation
 
-```sh
-pip install DarwinexDownloader
-```
-
-or you can install the latest version directly from github:
-
-```sh
-    $ pip install https://github.com/igarciaferreira/DarwinexDownloader/archive/refs/heads/main.zip
-``` 
+The instructions to install this package are in the header of the (DarwinexDownloader pypi website)[https://test.pypi.org/project/darwinexDownloader/]
 
 ## Documentation and Tutorials
 
@@ -66,8 +58,8 @@ Now in the 'data' variable we have the ohlc data ready to make our analysis.
  2022-06-28 00:15:00 | 1.05812 | 1.05852 | 1.05807 | 1.05825 | 549950000.0 |
  2022-06-28 00:30:00 | 1.05824 | 1.05853 | 1.05773 | 1.05779 | 503900000.0 |
  ... | ... | ... | ... | ... | ... |
- 2022-06-29 23:30:00 | 1.05218 | 1.05238 | 1.05204 | 1.05237 | 244950000.0 |
- 2022-06-29 23:45:00 | 1.05236 | 1.05238 | 1.05217 | 1.05220 | 291050000.0 |
+ 2022-06-29 23:30:00 | 1.04417 | 1.04463 | 1.04411 | 1.04457 | 471505000.0 |
+ 2022-06-29 23:45:00 | 1.04458 | 1.04463 | 1.04444 | 1.04456 | 239250000.0 |
 
 In the download method we have 4 arguments.
 
