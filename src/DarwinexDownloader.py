@@ -13,7 +13,7 @@ import os
 
 
 # main class
-class DarwinexDownloader:
+class downloader:
 	''' Class to download data from Darwinex'''
 
 	# Initialization

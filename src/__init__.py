@@ -1,1 +1,1 @@
-from src.DarwinexDownloader import DarwinexDownloader
+from src.dwnx  import downloader
