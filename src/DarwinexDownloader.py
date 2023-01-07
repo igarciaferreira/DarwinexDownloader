@@ -10,6 +10,8 @@ import pandas as pd
 from datetime import date, timedelta
 # Library to os manage files in OS
 import os
+# Library to show progress
+import tqdm
 
 
 # main class
@@ -30,7 +32,7 @@ class Connection:
 		
 		self.ftp = ftplib.FTP('tickdata.darwinex.com', self.user, self.passw)
 
-	def download(self, ticker, date_start, date_end, frecuency):
+	def download(self, ticker, date_start, date_end, frecuency, verbose=True):
 		''' Params
         :ticker: Ticker's name to download
         :date_start: start date with format dd-mm-yyyy
@@ -50,7 +52,9 @@ class Connection:
 			# Calculo la diferencia entre las fechas para ir hacíando el bucle
 			# que va descargar todos los datos
 			delta = end_datetime - start_datetime
-			for i in range(delta.days + 1):
+			days_of_data = delta.days + 1
+			pbar = tqdm.tqdm(total=days_of_data*24, desc="Downloading data", disable=(not verbose), unit=' hours')
+			for i in range(days_of_data):
 				day = start_datetime + timedelta(days=i)
 				# Pongo para que descargue todas las horas para casos de divisas
 				# Si no encuentra el fichero (al ser una acción normal) continua
@@ -61,16 +65,19 @@ class Connection:
 						self.ftp.retrbinary("RETR /"+ticker+"/"+download_file ,open(tmpdirname+"/"+download_file, 'wb').write)
 					except:
 						pass
+					pbar.update(1)
 			
 			onlyfiles = [f for f in os.listdir(tmpdirname) if os.path.isfile(os.path.join(tmpdirname, f))]
 
 			appended_data = []
-
+   
+			pbar = tqdm.tqdm(total=len(onlyfiles), desc="Preparing data", disable=(not verbose), unit=' files')
 			for stock_file in onlyfiles:
 				with open(tmpdirname+"/"+stock_file, 'rb') as fd:
 					gzip_fd = gzip.GzipFile(fileobj=fd)
 					appended_data.append(pd.read_csv(gzip_fd,names=["Date","Price","Size"]))
-			
+				pbar.update(1)
+    
 			df_stock = pd.concat(appended_data)
 			df_stock['Date'] = pd.to_datetime(df_stock['Date'],unit='ms')
 		
