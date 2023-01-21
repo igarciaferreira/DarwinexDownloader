@@ -4,3 +4,4 @@ gzip
 pandas
 datetime
 os
+tqdm
